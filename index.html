@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <script>
+        if (!localStorage.getItem("studyFlowCurrentUser")) {
+            window.location.href = "login.html" ;
+        }
+    </script>
 
     <header>
 
