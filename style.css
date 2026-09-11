@@ -1,0 +1,595 @@
+* {
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+
+
+body {
+    font-family: Arial, sans-serif ;
+    background: #f5f7fb ;
+    color: #202733 ;
+}
+
+
+/* Header */
+
+header {
+    background: #5b5bd6 ;
+    color: white ;
+    padding: 30px 20px ;
+}
+
+
+.header-content {
+    max-width: 900px ;
+    margin: auto ;
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+}
+
+
+header h1 {
+    font-size: 38px ;
+    margin-bottom: 5px ;
+}
+
+
+header p {
+    font-size: 16px ;
+    opacity: 0.9 ;
+}
+
+
+.logout-button {
+    background: white ;
+    color: #5b5bd6 ;
+    border: none ;
+    padding: 10px 18px ;
+    border-radius: 8px ;
+    cursor: pointer ;
+    font-size: 14px ;
+    font-weight: bold ;
+}
+
+
+.logout-button:hover {
+    background: #eeeeff ;
+}
+
+
+/* Main */
+
+main {
+    max-width: 900px ;
+    margin: 40px auto ;
+    padding: 0 20px ;
+}
+
+
+/* Dashboard */
+
+.stats {
+    display: grid ;
+    grid-template-columns: repeat(3, 1fr) ;
+    gap: 20px ;
+    margin-bottom: 30px ;
+}
+
+
+.stat-card {
+    background: white ;
+    padding: 25px ;
+    border-radius: 15px ;
+    text-align: center ;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) ;
+}
+
+
+.stat-card h3 {
+    color: #5b5bd6 ;
+    font-size: 32px ;
+    margin-bottom: 8px ;
+}
+
+
+.stat-card p {
+    color: #666d7a ;
+    font-size: 14px ;
+}
+
+
+/* Main sections */
+
+.planner,
+.assignments,
+.calendar-section {
+    background: white ;
+    padding: 30px ;
+    border-radius: 15px ;
+    margin-bottom: 30px ;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) ;
+}
+
+
+h2 {
+    margin-bottom: 20px ;
+}
+
+
+/* Add assignment form */
+
+#assignmentForm {
+    display: grid ;
+    grid-template-columns: 1fr 1fr ;
+    gap: 15px ;
+}
+
+
+#assignmentForm input,
+#assignmentForm select,
+.tools input,
+.tools select {
+    padding: 12px ;
+    border: 1px solid #d9dce5 ;
+    border-radius: 8px ;
+    font-size: 15px ;
+    background: white ;
+}
+
+
+#assignmentForm button {
+    grid-column: span 2 ;
+    padding: 13px ;
+    border: none ;
+    border-radius: 8px ;
+    background: #5b5bd6 ;
+    color: white ;
+    font-size: 16px ;
+    cursor: pointer ;
+}
+
+
+#assignmentForm button:hover {
+    background: #4848bd ;
+}
+
+
+/* Assignment header */
+
+.assignment-header {
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+}
+
+
+.assignment-header p {
+    background: #eeeeff ;
+    padding: 8px 14px ;
+    border-radius: 20px ;
+}
+
+
+#remainingCount {
+    font-weight: bold ;
+}
+
+
+/* Search and sort */
+
+.tools {
+    display: grid ;
+    grid-template-columns: 1fr 200px ;
+    gap: 10px ;
+    margin-bottom: 15px ;
+}
+
+
+.tools input:focus,
+.tools select:focus,
+#assignmentForm input:focus,
+#assignmentForm select:focus {
+    outline: none ;
+    border-color: #5b5bd6 ;
+}
+
+
+/* Filters */
+
+.filters {
+    display: flex ;
+    gap: 10px ;
+    margin-bottom: 20px ;
+}
+
+
+.filters button {
+    padding: 8px 16px ;
+    border: 1px solid #d9dce5 ;
+    background: white ;
+    border-radius: 20px ;
+    cursor: pointer ;
+}
+
+
+.filters button:hover {
+    background: #eeeeff ;
+}
+
+
+/* Assignment cards */
+
+.assignment-card {
+    border: 1px solid #e2e4eb ;
+    border-radius: 12px ;
+    padding: 18px ;
+    margin-bottom: 12px ;
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+}
+
+
+.assignment-info h3 {
+    margin-bottom: 7px ;
+}
+
+
+.assignment-info p {
+    font-size: 14px ;
+    color: #666d7a ;
+    margin: 4px 0 ;
+}
+
+
+.priority {
+    font-size: 13px ;
+    font-weight: bold ;
+}
+
+
+.high {
+    color: #d14b4b ;
+}
+
+
+.medium {
+    color: #c28a24 ;
+}
+
+
+.low {
+    color: #3d8b5d ;
+}
+
+
+.due-soon {
+    color: #c28a24 !important ;
+    font-weight: bold ;
+}
+
+
+.due-today {
+    color: #d14b4b !important ;
+    font-weight: bold ;
+}
+
+
+.assignment-actions {
+    display: flex ;
+    gap: 8px ;
+    flex-wrap: wrap ;
+    justify-content: flex-end ;
+}
+
+
+.assignment-actions button {
+    border: none ;
+    padding: 8px 12px ;
+    border-radius: 7px ;
+    cursor: pointer ;
+}
+
+
+.complete-button {
+    background: #e4f5e9 ;
+    color: #287344 ;
+}
+
+
+.edit-button {
+    background: #eeeeff ;
+    color: #4b4bb8 ;
+}
+
+
+.delete-button {
+    background: #fde8e8 ;
+    color: #b33a3a ;
+}
+
+
+.completed {
+    opacity: 0.6 ;
+}
+
+
+.completed h3 {
+    text-decoration: line-through ;
+}
+
+
+.empty-message {
+    text-align: center ;
+    color: #777 ;
+    padding: 20px ;
+}
+
+
+/* Calendar */
+
+.calendar-header {
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+}
+
+
+.calendar-header h2 {
+    margin-bottom: 0 ;
+}
+
+
+.calendar-header button {
+    width: 38px ;
+    height: 38px ;
+    border: none ;
+    border-radius: 8px ;
+    background: #eeeeff ;
+    color: #5b5bd6 ;
+    font-size: 18px ;
+    cursor: pointer ;
+}
+
+
+.calendar-header button:hover {
+    background: #dedeff ;
+}
+
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid ;
+    grid-template-columns: repeat(7, 1fr) ;
+}
+
+
+.calendar-weekdays {
+    margin-top: 25px ;
+    margin-bottom: 8px ;
+}
+
+
+.calendar-weekdays div {
+    text-align: center ;
+    font-size: 13px ;
+    font-weight: bold ;
+    color: #666d7a ;
+}
+
+
+.calendar-day {
+    min-height: 90px ;
+    border: 1px solid #eeeeee ;
+    padding: 8px ;
+}
+
+
+.calendar-day-number {
+    font-size: 14px ;
+    font-weight: bold ;
+    margin-bottom: 5px ;
+}
+
+
+.today {
+    background: #eeeeff ;
+}
+
+
+.calendar-assignment {
+    background: #5b5bd6 ;
+    color: white ;
+    font-size: 11px ;
+    padding: 4px ;
+    border-radius: 5px ;
+    margin-top: 4px ;
+    overflow: hidden ;
+    white-space: nowrap ;
+    text-overflow: ellipsis ;
+}
+
+
+.calendar-assignment.completed-calendar {
+    opacity: 0.5 ;
+    text-decoration: line-through ;
+}
+
+
+/* Login */
+
+.login-container {
+    min-height: 100vh ;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    padding: 20px ;
+}
+
+
+.login-box {
+    width: 100% ;
+    max-width: 420px ;
+    background: white ;
+    padding: 45px ;
+    border-radius: 18px ;
+    text-align: center ;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08) ;
+}
+
+
+.login-box h1 {
+    color: #5b5bd6 ;
+    font-size: 38px ;
+    margin-bottom: 8px ;
+}
+
+
+.login-box > p {
+    color: #666d7a ;
+    margin-bottom: 30px ;
+}
+
+
+#loginForm,
+#signupForm {
+    display: flex ;
+    flex-direction: column ;
+    gap: 15px ;
+}
+
+
+#loginForm input,
+#signupForm input {
+    padding: 13px ;
+    border: 1px solid #d9dce5 ;
+    border-radius: 8px ;
+    font-size: 15px ;
+}
+
+
+#loginForm input:focus,
+#signupForm input:focus {
+    outline: none ;
+    border-color: #5b5bd6 ;
+}
+
+
+#loginForm button,
+#signupForm button {
+    padding: 13px ;
+    border: none ;
+    border-radius: 8px ;
+    background: #5b5bd6 ;
+    color: white ;
+    font-size: 16px ;
+    cursor: pointer ;
+}
+
+
+#loginForm button:hover,
+#signupForm button:hover {
+    background: #4848bd ;
+}
+
+
+.signup-text {
+    margin-top: 25px ;
+    font-size: 14px ;
+}
+
+
+.signup-text a {
+    color: #5b5bd6 ;
+    text-decoration: none ;
+    font-weight: bold ;
+}
+
+
+.signup-text a:hover {
+    text-decoration: underline ;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px 20px ;
+    }
+
+
+    .header-content {
+        align-items: flex-start ;
+        gap: 20px ;
+    }
+
+
+    header h1 {
+        font-size: 30px ;
+    }
+
+
+    .stats {
+        grid-template-columns: 1fr ;
+    }
+
+
+    #assignmentForm {
+        grid-template-columns: 1fr ;
+    }
+
+
+    #assignmentForm button {
+        grid-column: span 1 ;
+    }
+
+
+    .tools {
+        grid-template-columns: 1fr ;
+    }
+
+
+    .assignment-header {
+        flex-direction: column ;
+        align-items: flex-start ;
+        gap: 10px ;
+    }
+
+
+    .assignment-card {
+        flex-direction: column ;
+        align-items: flex-start ;
+        gap: 15px ;
+    }
+
+
+    .assignment-actions {
+        justify-content: flex-start ;
+    }
+
+
+    .calendar-day {
+        min-height: 60px ;
+        padding: 5px ;
+    }
+
+
+    .calendar-weekdays div {
+        font-size: 11px ;
+    }
+
+
+    .calendar-assignment {
+        font-size: 9px ;
+    }
+
+
+    .login-box {
+        padding: 30px 20px ;
+    }
+
+}

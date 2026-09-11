@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+                <h1>StudyFlow</h1>
+                <p>Stay organized. Stay ahead.</p>
+            </div>
+
+            <button class="logout-button" onclick="logout()">
+                Log Out
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- Dashboard statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h3 id="totalCount">0</h3>
+
+                <p>Total Assignments</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="activeCount">0</h3>
+
+                <p>Active</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="completedCount">0</h3>
+
+                <p>Completed</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add assignment -->
+
+        <section class="planner">
+
+            <h2 id="formTitle">Add Assignment</h2>
+
+            <form id="assignmentForm">
+
+                <input
+                    type="text"
+                    id="assignmentName"
+                    placeholder="Assignment name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="className"
+                    placeholder="Class"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="dueDate"
+                    required
+                >
+
+                <select id="priority">
+
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+
+                </select>
+
+                <button type="submit" id="assignmentButton">
+                    Add Assignment
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Assignments -->
+
+        <section class="assignments">
+
+            <div class="assignment-header">
+
+                <h2>My Assignments</h2>
+
+                <p>
+                    Remaining:
+                    <span id="remainingCount">0</span>
+                </p>
+
+            </div>
+
+
+            <div class="tools">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search assignments..."
+                >
+
+
+                <select id="sortSelect">
+
+                    <option value="dueDate">
+                        Sort by Due Date
+                    </option>
+
+                    <option value="priority">
+                        Sort by Priority
+                    </option>
+
+                    <option value="name">
+                        Sort by Name
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button onclick="filterAssignments('all')">
+                    All
+                </button>
+
+                <button onclick="filterAssignments('active')">
+                    Active
+                </button>
+
+                <button onclick="filterAssignments('completed')">
+                    Completed
+                </button>
+
+            </div>
+
+
+            <div id="assignmentList">
+
+                <p class="empty-message">
+                    No assignments yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Calendar -->
+
+        <section class="calendar-section">
+
+            <div class="calendar-header">
+
+                <button onclick="changeMonth(-1)">
+                    ←
+                </button>
+
+                <h2 id="calendarTitle"></h2>
+
+                <button onclick="changeMonth(1)">
+                    →
+                </button>
+
+            </div>
+
+
+            <div class="calendar-weekdays">
+
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+
+            </div>
+
+
+            <div id="calendarDays" class="calendar-days"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
